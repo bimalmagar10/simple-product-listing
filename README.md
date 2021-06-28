@@ -29,7 +29,7 @@ Enjoy!!:stuck_out_tongue:
 - react-stripe-checkout (legacy ⚠️)
 
 ### Note
-Design is a bit messy :innocent: .Please feel free to your own design.
+Design is a bit messy :innocent: .Please feel free to implement your own design.
 
 ### Follow me on 
 
