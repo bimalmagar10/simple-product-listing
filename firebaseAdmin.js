@@ -1,6 +1,4 @@
 import * as admin from "firebase-admin";
-const atob = require('atob');
-const privateKey = atob(process.env.google_private_key);
  // const service ={
  // 	  "type":process.env.TYPE,
  // 	  "project_id":process.env.PROJECT_ID,
@@ -13,11 +11,29 @@ const privateKey = atob(process.env.google_private_key);
  // 	  "auth_provider_x509_cert_url":process.env.AUTH_PROVIDER_X509_CERT_URL,
  // 	  "client_x509_cert_url":process.env.CLIENT_X509_CERT_URL
  // };
+import crypto from 'crypto';
+
+import { encrypted } from './service-account.enc';
+
+const algorithm = 'aes-128-cbc';
+const decipher = crypto.createDecipheriv(
+  algorithm,
+  process.env.GOOGLE_ENCRYPTION_KEY,
+  process.env.GOOGLE_ENCRYPTION_IV
+);
+
+export const getDecryptedSecret = () => {
+  let decrypted = decipher.update(encrypted, 'base64', 'utf8');
+
+  decrypted += decipher.final('utf8');
+
+  return JSON.parse(decrypted);
+};
 
 export const verifyIdToken = token => {
 	if(!admin.apps.length) {
         admin.initializeApp({
-		  credential: admin.credential.cert(privateKey),
+		  credential: admin.credential.cert(getDecryptedSecret()),
 		  databaseURL:process.env.DATABASE_URL
 		})
 	}

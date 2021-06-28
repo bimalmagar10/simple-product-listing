@@ -7,3 +7,4 @@ export const DEFAULT_PRODUCT = {
 	"img":"jacket.png",
 	"reviews":150
 };
+
