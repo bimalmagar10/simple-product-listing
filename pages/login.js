@@ -29,7 +29,7 @@ export default function Login() {
 			</Head>
 			<Flex background="gray.800" height="100vh" width="100vw" alignItems="center" justifyContent="center"> 
 				<Flex width="30%" direction="column" background="gray.700" p={10} rounded={6}>
-					<Heading mb={6} textAlign="center" fontSize="3rem">Log In</Heading>
+					<Heading mb={6} textAlign="center" colorScheme="white" fontSize="3rem">Log In</Heading>
 					<FormControl mb={5} isRequired>
 					    <FormLabel fontSize="2rem">Email</FormLabel>
 						<Input
