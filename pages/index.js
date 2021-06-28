@@ -4,6 +4,7 @@ import Image from "next/image";
 import {motion} from "framer-motion";
 import {useAuth} from "../auth";
 import Navigation from "../components/Navigation";
+import Head from "next/head";
  const GlobalStyle = createGlobalStyle`
      *,
      *::after,
@@ -100,6 +101,9 @@ export default function Home({products}) {
   const {user} = useAuth();
   return (
     <>
+      <Head>
+        <title>Bimal&apos;s Product Listing</title>
+      </Head>
       <Navigation/>
       <Grid exit={{opacity:0}} initial="initial" animate="animate" variants={stagger}>
          {

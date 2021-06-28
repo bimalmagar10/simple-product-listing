@@ -1,5 +1,5 @@
 ## Introduction
-:rocket: This is a simple firbase authentication project is built with [Next.js](https://nextjs.org/).This is just for learning purpose.
+:rocket: This is a simple firebase authentication project built with [Next.js](https://nextjs.org/).This is just for learning purpose.I could built more resuable components but as I said this is just fro learning purpose.
 
 ## Getting Started
 
@@ -10,6 +10,13 @@ npm run dev
 # or
 yarn dev
 ```
+Secondly, open [http://localhost:3000](http://localhost:3000)
+
+Enjoy!!:stuck_out_tongue:
+
+## Demo 
+
+[Click Me]() to see the live version of this site. :cowboy_hat_face:
 
 ## Tools Used
 
@@ -19,7 +26,7 @@ yarn dev
 - Firebase
 - styled components
 - framer-motion
--react-stripe-checkout (legacy ⚠️)
+- react-stripe-checkout (legacy ⚠️)
 
 ### Note
 Design is a bit messy :innocent: .Please feel free to your own design.

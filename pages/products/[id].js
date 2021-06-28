@@ -9,6 +9,7 @@ import {useAuth} from "../../auth";
 import {DEFAULT_PRODUCT} from "../../data/data";
 import firebaseClient from "../../firebaseClient";
 import firebase from "firebase/app";
+import Head from "next/head";
 
 const Details = styled(motion.div)`
      height:100vh;
@@ -132,8 +133,11 @@ export default function Product(props){
     }
 	return (
     <>
+    <Head>
+        <title>{props.product.title}</title>
+    </Head>
     <Navigation/>
-   <Details exit={{opacity:0,transition:{duration:.5}}} initial="initial" animate="animate" variants={hey}>
+    <Details exit={{opacity:0,transition:{duration:.5}}} initial="initial" animate="animate" variants={hey}>
        <Left initial={{opacity:0}} animate={{opacity:1}}>
           <motion.div 
           initial={{opacity:0,x:60}} 
